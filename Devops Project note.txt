@@ -1,0 +1,59 @@
+
+DevOps Project:
+=============
+GIT, JENKINS, DOCKER, TRIVY, SONARQUBE, K8S, ECR
+
+KT
+
+Continuous Integration Continuous Deployment - automatic
+Continuous Integration Continuous Delivery - manual
+
+- CICD Pipeline
+- IAAC 
+- Configuration Mangement (Ansible).yaml
+- Monitoring & Logging
+- Cost Optimization - cost explore
+- Security (HIPAA)
+- Incident management = jira
+
+DEV -- QA -- STAGE -- PROD
+
+Non production
+Production - manual
+
+Microservice based
+
+Declarative - pipeline
+Scripted - node
+
+unit, integration
+
+/var/lib/jenkins/workspace/mypipeline/
+******************************************************************
+1. Push Code into Git hub repo
+2. Create a Ec2 - Ubuntu, t3.large, 30gb
+3. Installing Jenkins on Ec2 
+4. Create a Pipeline job
+5. Checkout code from git
+6. Install sonarqube on same Ec2 as a docker container
+7. Install sonar scanner plugin in jenkins
+8. Configure sonar  scanner --- manage jenkins -- system -- sonar installation - token (secret text)
+9. Configure sonar  scanner --- manage jenkins -- tool -- SonarQube Scanner installations
+10. Add test stage in pipeline
+11. Add jenkins in docker group
+12. Add build stage in pipeline
+
+
+sqa_015639ecf0458334aefaf0df21e7ca1e986d0280
+
+
+
+
+
+
+
+
+
+
+
+

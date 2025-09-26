@@ -1,0 +1,63 @@
+Jenkins Installation
+
+Docker Installation:
+===============
+apt-get update
+apt install docker.io -y
+usermod -aG docker jenkins
+systemctl restart jenkins
+
+Sonar Installation:
+==============
+docker run -d --name sonarqube -p 9000:9000 sonarqube:latest
+sqa_e4f2e7735fbfb05fea4ea315b8810d7243730fda
+
+Sonar scanner Installation:
+====================
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+unzip sonar-scanner-cli-5.0.1.3006-linux.zip
+sudo mv sonar-scanner-5.0.1.3006-linux /opt/sonar-scanner
+export PATH=$PATH:/opt/sonar-scanner/bin
+
+Trivy Installation:
+==============
+sudo apt-get install wget apt-transport-https gnupg lsb-release -y
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+sudo apt-get update
+sudo apt-get install trivy
+
+sudo mkdir -p /var/lib/jenkins/.cache/trivy/db
+sudo chown -R jenkins:jenkins /var/lib/jenkins/.cache/trivy
+
+Kubeconfig permission:
+==================
+sudo mkdir -p /var/lib/jenkins/.kube
+sudo cp ~/.kube/config /var/lib/jenkins/.kube/config
+sudo chown -R jenkins:jenkins /var/lib/jenkins/.kube
+
+Email notification:
+==============
+smtp.gmail.com
+smtp - 465
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
